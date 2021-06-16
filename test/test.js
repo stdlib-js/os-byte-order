@@ -37,8 +37,8 @@ tape( 'if the platform is little-endian, the value should be `little-endian`', f
 	var BYTE_ORDER;
 
 	BYTE_ORDER = proxyquire( './../lib/main.js', {
-		'@stdlib/assert/is-little-endian': true,
-		'@stdlib/assert/is-big-endian': false
+		'@stdlib/assert-is-little-endian': true,
+		'@stdlib/assert-is-big-endian': false
 	});
 	t.equal( BYTE_ORDER, 'little-endian', 'returns expected value' );
 	t.end();
@@ -48,8 +48,8 @@ tape( 'if the platform is big-endian, the value should be `big-endian`', functio
 	var BYTE_ORDER;
 
 	BYTE_ORDER = proxyquire( './../lib/main.js', {
-		'@stdlib/assert/is-little-endian': false,
-		'@stdlib/assert/is-big-endian': true
+		'@stdlib/assert-is-little-endian': false,
+		'@stdlib/assert-is-big-endian': true
 	});
 	t.equal( BYTE_ORDER, 'big-endian', 'returns expected value' );
 	t.end();
@@ -59,8 +59,8 @@ tape( 'if the platform is both little-endian and big-endian, the value should be
 	var BYTE_ORDER;
 
 	BYTE_ORDER = proxyquire( './../lib/main.js', {
-		'@stdlib/assert/is-little-endian': true,
-		'@stdlib/assert/is-big-endian': true
+		'@stdlib/assert-is-little-endian': true,
+		'@stdlib/assert-is-big-endian': true
 	});
 	t.equal( BYTE_ORDER, 'mixed-endian', 'returns expected value' );
 	t.end();
@@ -70,8 +70,8 @@ tape( 'if the platform is neither little-endian nor big-endian, the value should
 	var BYTE_ORDER;
 
 	BYTE_ORDER = proxyquire( './../lib/main.js', {
-		'@stdlib/assert/is-little-endian': false,
-		'@stdlib/assert/is-big-endian': false
+		'@stdlib/assert-is-little-endian': false,
+		'@stdlib/assert-is-big-endian': false
 	});
 	t.equal( BYTE_ORDER, 'unknown', 'returns expected value' );
 	t.end();

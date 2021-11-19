@@ -20,7 +20,7 @@ limitations under the License.
 
 # Byte Order
 
-[![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] [![dependencies][dependencies-image]][dependencies-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
 > Platform [byte order][endianness].
 
@@ -272,6 +272,23 @@ $ byte-order
 
 <!-- /.cli -->
 
+<!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
+
+<section class="related">
+
+* * *
+
+## See Also
+
+-   <span class="package-name">[`@stdlib/assert/is-big-endian`][@stdlib/assert/is-big-endian]</span><span class="delimiter">: </span><span class="description">check if an environment is big endian.</span>
+-   <span class="package-name">[`@stdlib/assert/is-little-endian`][@stdlib/assert/is-little-endian]</span><span class="delimiter">: </span><span class="description">check if an environment is little endian.</span>
+
+</section>
+
+<!-- /.related -->
+
+<!-- Section for all links. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
 
 <section class="main-repo" >
 
@@ -315,8 +332,12 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/os-byte-order/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/os-byte-order?branch=main
 
+<!--
+
 [dependencies-image]: https://img.shields.io/david/stdlib-js/os-byte-order.svg
 [dependencies-url]: https://david-dm.org/stdlib-js/os-byte-order/main
+
+-->
 
 [chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
 [chat-url]: https://gitter.im/stdlib-js/stdlib/
@@ -328,6 +349,14 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/os-byte-order/main/LICENSE
 
 [endianness]: https://en.wikipedia.org/wiki/Endianness
+
+<!-- <related-links> -->
+
+[@stdlib/assert/is-big-endian]: https://github.com/stdlib-js/assert-is-big-endian
+
+[@stdlib/assert/is-little-endian]: https://github.com/stdlib-js/assert-is-little-endian
+
+<!-- </related-links> -->
 
 </section>
 

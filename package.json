@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/os-byte-order",
-  "version": "0.0.7",
+  "version": "0.0.0",
   "description": "Platform byte order.",
   "license": "Apache-2.0",
   "author": {

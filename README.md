@@ -24,14 +24,31 @@ limitations under the License.
 
 > Platform [byte order][endianness].
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/os-byte-order
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+-   To use as a general utility for the command line, install the corresponding [CLI package][cli-section] globally.
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import BYTE_ORDER from 'https://cdn.jsdelivr.net/gh/stdlib-js/os-byte-order@esm/index.mjs';
+var BYTE_ORDER = require( '@stdlib/os-byte-order' );
 ```
 
 #### BYTE_ORDER
@@ -68,13 +85,8 @@ console.log( BYTE_ORDER );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import BYTE_ORDER from 'https://cdn.jsdelivr.net/gh/stdlib-js/os-byte-order@esm/index.mjs';
+```javascript
+var BYTE_ORDER = require( '@stdlib/os-byte-order' );
 
 if ( BYTE_ORDER === 'little-endian' ) {
     console.log( 'Least significant byte comes first...' );
@@ -83,10 +95,6 @@ if ( BYTE_ORDER === 'little-endian' ) {
 } else {
     console.log( 'This is uncommon...' );
 }
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -95,9 +103,175 @@ if ( BYTE_ORDER === 'little-endian' ) {
 
 <!-- C interface documentation. -->
 
+* * *
 
+<section class="c">
 
+## C APIs
 
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/os/byte_order.h"
+```
+
+#### STDLIB_OS_ORDER_LITTLE_ENDIAN
+
+Macro for an arbitrary constant indicating little-endian order.
+
+```c
+#if defined(STDLIB_OS_BYTE_ORDER) && STDLIB_OS_BYTE_ORDER == STDLIB_OS_ORDER_LITTLE_ENDIAN
+
+// Do something for little-endian...
+
+#endif
+```
+
+If compiled on an unrecognized/unsupported platform, the macro is **not** defined.
+
+#### STDLIB_OS_ORDER_BIG_ENDIAN
+
+Macro for an arbitrary constant indicating big-endian order.
+
+```c
+#if defined(STDLIB_OS_BYTE_ORDER) && STDLIB_OS_BYTE_ORDER == STDLIB_OS_ORDER_BIG_ENDIAN
+
+// Do something for big-endian...
+
+#endif
+```
+
+If compiled on an unrecognized/unsupported platform, the macro is **not** defined.
+
+#### STDLIB_OS_BYTE_ORDER
+
+Macro which equals either `STDLIB_OS_ORDER_LITTLE_ENDIAN` or `STDLIB_OS_ORDER_BIG_ENDIAN` (or host defined) depending on the resolved platform byte order.
+
+```c
+#if defined(STDLIB_OS_BYTE_ORDER)
+
+#if STDLIB_OS_BYTE_ORDER == STDLIB_OS_ORDER_LITTLE_ENDIAN
+
+// Do something for little-endian...
+
+#elif STDLIB_OS_BYTE_ORDER == STDLIB_OS_ORDER_BIG_ENDIAN
+
+// Do something for big-endian...
+
+#endif
+
+#endif
+```
+
+If compiled on an unrecognized/unsupported platform, the macro is **not** defined.
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/os/byte_order.h"
+#include <stdio.h>
+
+int main() {
+#if defined(STDLIB_OS_BYTE_ORDER)
+#if STDLIB_OS_BYTE_ORDER == STDLIB_OS_ORDER_LITTLE_ENDIAN
+    printf( "Platform is little-endian...\n" );
+#elif STDLIB_OS_BYTE_ORDER == STDLIB_OS_ORDER_BIG_ENDIAN
+    printf( "Platform is big-endian...\n" );
+#else
+    printf( "Platform endianness is either mixed-endian or unknown...\n" )
+#endif
+#endif
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
+
+* * *
+
+<section class="cli">
+
+## CLI
+
+<section class="installation">
+
+## Installation
+
+To use as a general utility, install the CLI package globally
+
+```bash
+npm install -g @stdlib/os-byte-order-cli
+```
+
+</section>
+
+<!-- CLI usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```text
+Usage: byte-order [options]
+
+Options:
+
+  -h,    --help                Print this message.
+  -V,    --version             Print the package version.
+```
+
+</section>
+
+<!-- /.usage -->
+
+<section class="examples">
+
+### Examples
+
+```bash
+$ byte-order
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.cli -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -107,8 +281,8 @@ if ( BYTE_ORDER === 'little-endian' ) {
 
 ## See Also
 
--   <span class="package-name">[`@stdlib/assert/is-big-endian`][@stdlib/assert/is-big-endian]</span><span class="delimiter">: </span><span class="description">check if an environment is big endian.</span>
--   <span class="package-name">[`@stdlib/assert/is-little-endian`][@stdlib/assert/is-little-endian]</span><span class="delimiter">: </span><span class="description">check if an environment is little endian.</span>
+-   <span class="package-name">[`@stdlib/assert-is-big-endian`][@stdlib/assert/is-big-endian]</span><span class="delimiter">: </span><span class="description">check if an environment is big endian.</span>
+-   <span class="package-name">[`@stdlib/assert-is-little-endian`][@stdlib/assert/is-little-endian]</span><span class="delimiter">: </span><span class="description">check if an environment is little endian.</span>
 
 </section>
 
@@ -123,7 +297,7 @@ if ( BYTE_ORDER === 'little-endian' ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -173,6 +347,10 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-authors]: https://github.com/stdlib-js/stdlib/graphs/contributors
 
+[cli-section]: https://github.com/stdlib-js/os-byte-order#cli
+[cli-url]: https://github.com/stdlib-js/os-byte-order/tree/cli
+[@stdlib/os-byte-order]: https://github.com/stdlib-js/os-byte-order/tree/main
+
 [umd]: https://github.com/umdjs/umd
 [es-module]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
 
@@ -187,9 +365,9 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/assert/is-big-endian]: https://github.com/stdlib-js/assert-is-big-endian/tree/esm
+[@stdlib/assert/is-big-endian]: https://github.com/stdlib-js/assert-is-big-endian
 
-[@stdlib/assert/is-little-endian]: https://github.com/stdlib-js/assert-is-little-endian/tree/esm
+[@stdlib/assert/is-little-endian]: https://github.com/stdlib-js/assert-is-little-endian
 
 <!-- </related-links> -->
 

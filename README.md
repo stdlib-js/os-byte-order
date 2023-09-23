@@ -18,29 +18,224 @@ limitations under the License.
 
 -->
 
+
+<details>
+  <summary>
+    About stdlib...
+  </summary>
+  <p>We believe in a future in which the web is a preferred environment for numerical computation. To help realize this future, we've built stdlib. stdlib is a standard library, with an emphasis on numerical and scientific computation, written in JavaScript (and C) for execution in browsers and in Node.js.</p>
+  <p>The library is fully decomposable, being architected in such a way that you can swap out and mix and match APIs and functionality to cater to your exact preferences and use cases.</p>
+  <p>When you use stdlib, you can be absolutely certain that you are using the most thorough, rigorous, well-written, studied, documented, tested, measured, and high-quality code out there.</p>
+  <p>To join us in bringing numerical computing to the web, get started by checking us out on <a href="https://github.com/stdlib-js/stdlib">GitHub</a>, and please consider <a href="https://opencollective.com/stdlib">financially supporting stdlib</a>. We greatly appreciate your continued support!</p>
+</details>
+
 # Byte Order
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
 > Platform [byte order][endianness].
 
+<section class="installation">
 
+## Installation
 
+```bash
+npm install @stdlib/os-byte-order
+```
 
+Alternatively,
 
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+-   To use as a general utility for the command line, install the corresponding [CLI package][cli-section] globally.
 
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
 
+</section>
 
+<section class="usage">
+
+## Usage
+
+```javascript
+var BYTE_ORDER = require( '@stdlib/os-byte-order' );
+```
+
+#### BYTE_ORDER
+
+Platform byte order.
+
+```javascript
+console.log( BYTE_ORDER );
+// => <string>
+```
+
+</section>
+
+<!-- /.usage -->
+
+<section class="notes">
+
+## Notes
+
+-   The following values are possible:
+
+    -   `'little-endian'`
+    -   `'big-endian'`
+    -   `'mixed-endian'` (also known as "middle-endian")
+    -   `'unknown'`
+
+</section>
+
+<!-- /.notes -->
+
+<section class="examples">
+
+## Examples
+
+<!-- eslint no-undef: "error" -->
+
+```javascript
+var BYTE_ORDER = require( '@stdlib/os-byte-order' );
+
+if ( BYTE_ORDER === 'little-endian' ) {
+    console.log( 'Least significant byte comes first...' );
+} else if ( BYTE_ORDER === 'big-endian' ) {
+    console.log( 'Most significant byte comes first...' );
+} else {
+    console.log( 'This is uncommon...' );
+}
+```
+
+</section>
+
+<!-- /.examples -->
 
 <!-- C interface documentation. -->
 
+* * *
 
+<section class="c">
 
+## C APIs
 
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/os/byte_order.h"
+```
+
+#### STDLIB_OS_ORDER_LITTLE_ENDIAN
+
+Macro for an arbitrary constant indicating little-endian order.
+
+```c
+#if defined(STDLIB_OS_BYTE_ORDER) && STDLIB_OS_BYTE_ORDER == STDLIB_OS_ORDER_LITTLE_ENDIAN
+
+// Do something for little-endian...
+
+#endif
+```
+
+If compiled on an unrecognized/unsupported platform, the macro is **not** defined.
+
+#### STDLIB_OS_ORDER_BIG_ENDIAN
+
+Macro for an arbitrary constant indicating big-endian order.
+
+```c
+#if defined(STDLIB_OS_BYTE_ORDER) && STDLIB_OS_BYTE_ORDER == STDLIB_OS_ORDER_BIG_ENDIAN
+
+// Do something for big-endian...
+
+#endif
+```
+
+If compiled on an unrecognized/unsupported platform, the macro is **not** defined.
+
+#### STDLIB_OS_BYTE_ORDER
+
+Macro which equals either `STDLIB_OS_ORDER_LITTLE_ENDIAN` or `STDLIB_OS_ORDER_BIG_ENDIAN` (or host defined) depending on the resolved platform byte order.
+
+```c
+#if defined(STDLIB_OS_BYTE_ORDER)
+
+#if STDLIB_OS_BYTE_ORDER == STDLIB_OS_ORDER_LITTLE_ENDIAN
+
+// Do something for little-endian...
+
+#elif STDLIB_OS_BYTE_ORDER == STDLIB_OS_ORDER_BIG_ENDIAN
+
+// Do something for big-endian...
+
+#endif
+
+#endif
+```
+
+If compiled on an unrecognized/unsupported platform, the macro is **not** defined.
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/os/byte_order.h"
+#include <stdio.h>
+
+int main( void ) {
+#if defined(STDLIB_OS_BYTE_ORDER)
+#if STDLIB_OS_BYTE_ORDER == STDLIB_OS_ORDER_LITTLE_ENDIAN
+    printf( "Platform is little-endian...\n" );
+#elif STDLIB_OS_BYTE_ORDER == STDLIB_OS_ORDER_BIG_ENDIAN
+    printf( "Platform is big-endian...\n" );
+#else
+    printf( "Platform endianness is either mixed-endian or unknown...\n" )
+#endif
+#endif
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
+
+* * *
 
 <section class="cli">
 
-
+## CLI
 
 <section class="installation">
 
@@ -58,7 +253,7 @@ npm install -g @stdlib/os-byte-order-cli
 
 <section class="usage">
 
-## Usage
+### Usage
 
 ```text
 Usage: byte-order [options]
@@ -75,7 +270,7 @@ Options:
 
 <section class="examples">
 
-## Examples
+### Examples
 
 ```bash
 $ byte-order
@@ -93,9 +288,10 @@ $ byte-order
 
 <section class="related">
 
+* * *
+
 ## See Also
 
--   <span class="package-name">[`@stdlib/os-byte-order`][@stdlib/os-byte-order]</span><span class="delimiter">: </span><span class="description">platform byte order.</span>
 -   <span class="package-name">[`@stdlib/assert-is-big-endian`][@stdlib/assert/is-big-endian]</span><span class="delimiter">: </span><span class="description">check if an environment is big endian.</span>
 -   <span class="package-name">[`@stdlib/assert-is-little-endian`][@stdlib/assert/is-little-endian]</span><span class="delimiter">: </span><span class="description">check if an environment is little endian.</span>
 
@@ -116,7 +312,7 @@ This package is part of [stdlib][stdlib], a standard library for JavaScript and 
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
-### Community
+#### Community
 
 [![Chat][chat-image]][chat-url]
 
@@ -139,11 +335,11 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 <section class="links">
 
-[npm-image]: http://img.shields.io/npm/v/@stdlib/os-byte-order-cli.svg
-[npm-url]: https://npmjs.org/package/@stdlib/os-byte-order-cli
+[npm-image]: http://img.shields.io/npm/v/@stdlib/os-byte-order.svg
+[npm-url]: https://npmjs.org/package/@stdlib/os-byte-order
 
-[test-image]: https://github.com/stdlib-js/os-byte-order/actions/workflows/test.yml/badge.svg?branch=main
-[test-url]: https://github.com/stdlib-js/os-byte-order/actions/workflows/test.yml?query=branch:main
+[test-image]: https://github.com/stdlib-js/os-byte-order/actions/workflows/test.yml/badge.svg?branch=v0.1.0
+[test-url]: https://github.com/stdlib-js/os-byte-order/actions/workflows/test.yml?query=branch:v0.1.0
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/os-byte-order/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/os-byte-order?branch=main

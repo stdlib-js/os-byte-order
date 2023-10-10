@@ -42,6 +42,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import BYTE_ORDER from 'https://cdn.jsdelivr.net/gh/stdlib-js/os-byte-order@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/os-byte-order/tags). For example,
+
+```javascript
 import BYTE_ORDER from 'https://cdn.jsdelivr.net/gh/stdlib-js/os-byte-order@v0.1.1-esm/index.mjs';
 ```
 
@@ -85,7 +90,7 @@ console.log( BYTE_ORDER );
 <body>
 <script type="module">
 
-import BYTE_ORDER from 'https://cdn.jsdelivr.net/gh/stdlib-js/os-byte-order@v0.1.1-esm/index.mjs';
+import BYTE_ORDER from 'https://cdn.jsdelivr.net/gh/stdlib-js/os-byte-order@esm/index.mjs';
 
 if ( BYTE_ORDER === 'little-endian' ) {
     console.log( 'Least significant byte comes first...' );

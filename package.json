@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/os-byte-order",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Platform byte order.",
   "license": "Apache-2.0",
   "author": {
@@ -39,11 +39,11 @@
     "url": "https://github.com/stdlib-js/stdlib/issues"
   },
   "dependencies": {
-    "@stdlib/assert-is-big-endian": "^0.1.1",
-    "@stdlib/assert-is-little-endian": "^0.1.1",
+    "@stdlib/assert-is-big-endian": "^0.2.0",
+    "@stdlib/assert-is-little-endian": "^0.2.0",
     "@stdlib/cli-ctor": "^0.1.1",
-    "@stdlib/fs-read-file": "^0.1.1",
-    "@stdlib/utils-library-manifest": "^0.1.1"
+    "@stdlib/fs-read-file": "^0.2.0",
+    "@stdlib/utils-library-manifest": "^0.2.0"
   },
   "devDependencies": {
     "@stdlib/assert-is-browser": "^0.1.1",

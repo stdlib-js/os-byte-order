@@ -42,6 +42,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import BYTE_ORDER from 'https://cdn.jsdelivr.net/gh/stdlib-js/os-byte-order@deno/mod.js';
+```
+The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/os-byte-order/tags). For example,
+
+```javascript
 import BYTE_ORDER from 'https://cdn.jsdelivr.net/gh/stdlib-js/os-byte-order@v0.2.0-deno/mod.js';
 ```
 
@@ -80,7 +85,7 @@ console.log( BYTE_ORDER );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import BYTE_ORDER from 'https://cdn.jsdelivr.net/gh/stdlib-js/os-byte-order@v0.2.0-deno/mod.js';
+import BYTE_ORDER from 'https://cdn.jsdelivr.net/gh/stdlib-js/os-byte-order@deno/mod.js';
 
 if ( BYTE_ORDER === 'little-endian' ) {
     console.log( 'Least significant byte comes first...' );

@@ -42,7 +42,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import BYTE_ORDER from 'https://cdn.jsdelivr.net/gh/stdlib-js/os-byte-order@esm/index.mjs';
+import BYTE_ORDER from 'https://cdn.jsdelivr.net/gh/stdlib-js/os-byte-order@v0.2.2-esm/index.mjs';
 ```
 
 #### BYTE_ORDER
@@ -85,7 +85,7 @@ console.log( BYTE_ORDER );
 <body>
 <script type="module">
 
-import BYTE_ORDER from 'https://cdn.jsdelivr.net/gh/stdlib-js/os-byte-order@esm/index.mjs';
+import BYTE_ORDER from 'https://cdn.jsdelivr.net/gh/stdlib-js/os-byte-order@v0.2.2-esm/index.mjs';
 
 if ( BYTE_ORDER === 'little-endian' ) {
     console.log( 'Least significant byte comes first...' );

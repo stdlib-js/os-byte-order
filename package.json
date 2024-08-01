@@ -39,8 +39,8 @@
     "url": "https://github.com/stdlib-js/stdlib/issues"
   },
   "dependencies": {
-    "@stdlib/assert-is-big-endian": "^0.2.1",
-    "@stdlib/assert-is-little-endian": "^0.2.1",
+    "@stdlib/assert-is-big-endian": "^0.2.2",
+    "@stdlib/assert-is-little-endian": "^0.2.2",
     "@stdlib/cli-ctor": "^0.2.2",
     "@stdlib/fs-read-file": "^0.2.2",
     "@stdlib/utils-library-manifest": "^0.2.2"

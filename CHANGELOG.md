@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-06-22)
+## Unreleased (2026-01-30)
 
 <section class="issues">
 
@@ -24,6 +24,7 @@ This release closes the following issue:
 
 <details>
 
+-   [`f344466`](https://github.com/stdlib-js/stdlib/commit/f344466c6dcfb8f52d7f3148acaadd52772938da) - **test:** use .strictEqual() instead of .equal() and fix lint errors _(by Philipp Burckhardt)_
 -   [`de5c162`](https://github.com/stdlib-js/stdlib/commit/de5c162480ac0e3fef8a05b27d9dafc4c3ba7d8c) - **chore:** fix EditorConfig lint errors [(#7450)](https://github.com/stdlib-js/stdlib/pull/7450) _(by Daniel Hernandez Gomez, Philipp Burckhardt)_
 
 </details>

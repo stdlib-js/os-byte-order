@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/os-byte-order",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Platform byte order.",
   "license": "Apache-2.0",
   "author": {
@@ -41,14 +41,14 @@
   "dependencies": {
     "@stdlib/assert-is-big-endian": "^0.2.2",
     "@stdlib/assert-is-little-endian": "^0.2.2",
-    "@stdlib/cli-ctor": "^0.2.2",
-    "@stdlib/fs-read-file": "^0.2.2",
+    "@stdlib/cli-ctor": "^0.2.3",
+    "@stdlib/fs-read-file": "^0.2.3",
     "@stdlib/utils-library-manifest": "^0.2.3"
   },
   "devDependencies": {
-    "@stdlib/assert-is-browser": "^0.2.2",
-    "@stdlib/assert-is-windows": "^0.2.2",
-    "@stdlib/process-exec-path": "^0.2.2",
+    "@stdlib/assert-is-browser": "^0.2.3",
+    "@stdlib/assert-is-windows": "^0.2.3",
+    "@stdlib/process-exec-path": "^0.2.3",
     "proxyquire": "^2.0.0",
     "tape": "git+https://github.com/kgryte/tape.git#fix/globby",
     "istanbul": "^0.4.1",
